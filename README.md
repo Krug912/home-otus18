@@ -1,7 +1,7 @@
 # SELinux - когда все запрещено
 
-##   1. Задание  
-Запустить nginx на нестандартном порту 3-мя разными способами:
+##   1. Задание  Запустить nginx на нестандартном порту 3-мя разными способами:
+
  - переключатели setsebool;
  - добавление нестандартного порта в имеющийся тип;
  - формирование и установка модуля SELinux.
@@ -225,4 +225,14 @@ May 10 01:50:28 selinux systemd[1]: Started The nginx HTTP and reverse proxy ser
 ```
 ![image](https://github.com/Krug912/home-otus18/assets/162484306/57bfbcae-df84-4166-a5ed-821e39af387b)
 
-##   2. Задание 
+##   2. Задание Обеспечение работоспособности приложения при включенном SEL
+```
+[vagrant@client ~]$ nsupdate -k /etc/named.zonetransfer.key
+> server 192.168.50.10
+> zone ddns.lab
+> update add www.ddns.lab. 60 A 192.168.50.15
+> send
+update failed: SERVFAIL
+> quit
+[vagrant@client ~]$ 
+```
